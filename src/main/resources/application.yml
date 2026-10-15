@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: eshopuser
+  datasource:
+    url: &db-url jdbc:postgresql://localhost:5432/eshop
+    username: eshopuser
+    password: eshopuser
+    driver-class-name: org.postgresql.Driver
+  flyway: # migrations only
+    url: *db-url
+    user: migration_user
+    password: migration_user
+  jpa:
+    hibernate:
+      ddl-auto: validate
